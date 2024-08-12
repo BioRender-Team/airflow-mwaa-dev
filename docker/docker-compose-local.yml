@@ -26,9 +26,9 @@ services:
         max-size: 10m
         max-file: "3"
     volumes:
-      - "${PWD}/dags:/usr/local/airflow/dags"
-      - "${PWD}/plugins:/usr/local/airflow/plugins"
-      - "${PWD}/requirements:/usr/local/airflow/requirements"
+      - "${AIRFLOW_PROJECT_PATH}/dags:/usr/local/airflow/dags"
+      - "${AIRFLOW_PROJECT_PATH}/plugins:/usr/local/airflow/plugins"
+      - "${AIRFLOW_PROJECT_PATH}/requirements:/usr/local/airflow/requirements"
       - "${PWD}/startup_script:/usr/local/airflow/startup"
     ports:
       - "8080:8080"
@@ -40,3 +40,4 @@ services:
       retries: 3
     env_file:
       - ./config/.env.localrunner
+      - .env
