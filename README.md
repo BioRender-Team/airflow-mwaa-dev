@@ -1,3 +1,13 @@
+# About this fork
+
+This fork allows users to define their Airflow project path outside of this repo.
+
+## Airflow Project Config
+
+Change the `AIRFLOW_PROJECT_PATH` value in `docker/.env` to be the path of your Airflow project (where you have cloned the BioRender Airflow repo).
+
+It is also necessary to add this folder to your Docker file sharing directories list. For newer Macs, this must be done by editing the `filesharingDirecories` attribute in your docker settings file (`~/Library/Group Containers/group.com.docker/settings.json`). On some machines, this may be done through the UI - `Settings > Resources > File sharing > Virtual File Shares`.
+
 # About aws-mwaa-local-runner
 
 This repository provides a command line interface (CLI) utility that replicates an Amazon Managed Workflows for Apache Airflow (MWAA) environment locally.
