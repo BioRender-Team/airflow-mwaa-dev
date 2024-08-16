@@ -2,9 +2,11 @@
 
 This fork allows users to define their Airflow project path outside of this repo.
 
+*Note that this is a public repository, so no sensitive information should be shared here.*
+
 ## Airflow Project Config
 
-Change the `AIRFLOW_PROJECT_PATH` value in `docker/.env` to be the path of your Airflow project (where you have cloned the BioRender Airflow repo).
+Change the `AIRFLOW_PROJECT_PATH` value in `docker/.env` to be the path of your Airflow project. Example `/Users/user.name/git/airflow`.
 
 It is also necessary to add this folder to your Docker file sharing directories list. For newer Macs, this must be done by editing the `filesharingDirecories` attribute in your docker settings file (`~/Library/Group Containers/group.com.docker/settings.json`). On some machines, this may be done through the UI - `Settings > Resources > File sharing > Virtual File Shares`.
 
@@ -20,42 +22,6 @@ aligned with the Large environment class in this repository._
 ## About the CLI
 
 The CLI builds a Docker container image locally that’s similar to a MWAA production image. This allows you to run a local Apache Airflow environment to develop and test DAGs, custom plugins, and dependencies before deploying to MWAA.
-
-## What this repo contains
-
-```text
-dags/
-  example_lambda.py
-  example_dag_with_taskflow_api.py
-  example_redshift_data_execute_sql.py
-docker/
-  config/
-    airflow.cfg
-    constraints.txt
-    mwaa-base-providers-requirements.txt
-    webserver_config.py
-    .env.localrunner
-  script/
-    bootstrap.sh
-    entrypoint.sh
-    systemlibs.sh
-    generate_key.sh
-  docker-compose-local.yml
-  docker-compose-resetdb.yml
-  docker-compose-sequential.yml
-  Dockerfile
-plugins/
-  README.md
-requirements/
-  requirements.txt
-.gitignore
-CODE_OF_CONDUCT.md
-CONTRIBUTING.md
-LICENSE
-mwaa-local-env
-README.md
-VERSION
-```
 
 ## Prerequisites
 
