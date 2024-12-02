@@ -10,6 +10,10 @@ Change the `AIRFLOW_PROJECT_PATH` value in `docker/.env` to be the path of your 
 
 It is also necessary to add this folder to your Docker file sharing directories list. For newer Macs, this must be done by editing the `filesharingDirecories` attribute in your docker settings file (`~/Library/Group Containers/group.com.docker/settings.json`). On some machines, this may be done through the UI - `Settings > Resources > File sharing > Virtual File Shares`.
 
+## Note
+Starting from Airflow version 2.9, MWAA has open-sourced the original Docker image used in our production deployments. You can refer to our open-source image repository at https://github.com/aws/amazon-mwaa-docker-images to create a local environment identical to that of MWAA.
+You can also continue to use the MWAA Local Runner for testing and packaging requirements for all Airflow versions supported on MWAA.
+
 # About aws-mwaa-local-runner
 
 This repository provides a command line interface (CLI) utility that replicates an Amazon Managed Workflows for Apache Airflow (MWAA) environment locally.
